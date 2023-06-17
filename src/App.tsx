@@ -1,12 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import LoginForm from './components/login';
+import { Route, Routes } from 'react-router-dom';
+import LoginForm from './components/pages/Login';
+import Search from './components/pages/Search';
 
 function App() {
   return (
     <div>
       <p>Trybetunes</p>
-      <LoginForm />
+      <Routes>
+        <Route path="/" element={ <LoginForm /> } />
+        <Route path="/search" element={ <Search /> } />
+      </Routes>
     </div>
   );
 }
