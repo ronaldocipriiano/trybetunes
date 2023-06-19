@@ -7,6 +7,7 @@ function Search() {
   const [artistName, setArtistName] = useState('');
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
+  const [searchResult, setSearchResult] = useState('');
   const navigate = useNavigate();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,6 +21,7 @@ function Search() {
       .then((response) => {
         setAlbums(response);
         setArtistName('');
+        setSearchResult(`Resultado de álbuns de: ${artistName}`);
       })
       .finally(() => {
         setLoading(false);
@@ -56,8 +58,7 @@ function Search() {
       {albums.length > 0 ? (
         <div>
           <p>
-            Resultado de álbuns de:
-            {artistName}
+            { searchResult }
           </p>
           <ul>
             {albums.map((album) => (
