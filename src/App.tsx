@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import LoginForm from './components/pages/Login';
 import Search from './components/pages/Search';
+import Album from './components/pages/Album';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <LoginForm /> } />
         <Route path="/search" element={ <Search /> } />
+        <Route path="/Album/:id" element={ <Album /> } />
       </Routes>
     </div>
   );

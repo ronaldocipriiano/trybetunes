@@ -19,10 +19,10 @@ function Search() {
     searchAlbumsAPI(artistName)
       .then((response) => {
         setAlbums(response);
+        setArtistName('');
       })
       .finally(() => {
         setLoading(false);
-        setArtistName('');
       });
   };
 
