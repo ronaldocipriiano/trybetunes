@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import getMusics from '../../services/musicsAPI';
 import MusicCard from './MusicCard';
@@ -11,19 +11,21 @@ function Album() {
   const [musics, setMusics] = useState<SongType[]>([]);
 
   useEffect(() => {
-    if (id) {
-      getMusics(id)
-        .then((response: any[]) => {
-          const [albumData, ...songs] = response;
+    const fetchData = async () => {
+      try {
+        if (id) {
+          const [albumData, ...songs] = await getMusics(id);
           setAlbum(albumData);
           setMusics(songs);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
-      setLoading(false);
-    }
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, [id]);
 
   if (loading) {
@@ -43,7 +45,10 @@ function Album() {
       {musics.length > 0 ? (
         <div>
           {musics.map((music) => (
-            <MusicCard key={ music.trackId } song={ music } />
+            <MusicCard
+              key={ music.trackId }
+              song={ music }
+            />
           ))}
         </div>
       ) : (

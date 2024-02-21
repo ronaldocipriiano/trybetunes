@@ -1,22 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SongType } from '../../types';
+import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
 
-interface MusicCardProps {
+type MusicCardProps = {
   song: SongType;
-}
+  updateFavoriteSongs?: (trackId: number) => void;
+};
 
-function MusicCard({ song }: MusicCardProps) {
-  const { trackName, previewUrl } = song;
+function MusicCard({ song, updateFavoriteSongs = () => '' }: MusicCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const handleFavoriteToggle = () => {
-    setIsFavorite(!isFavorite);
+  console.log(loading);
+
+  useEffect(() => {
+    const favoriteSongs = async () => {
+      const index = (await getFavoriteSongs())
+        .findIndex((favorite) => favorite.trackId === song.trackId);
+      setIsFavorite(index >= 0);
+      setLoading(false);
+    };
+    favoriteSongs();
+  }, [song.trackId]);
+
+  const handleFavoriteToggle = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked } = e.target;
+    setIsFavorite(checked);
+    updateFavoriteSongs(song.trackId);
+
+    if (checked) {
+      await addSong(song);
+    } else {
+      await removeSong(song);
+    }
   };
 
   return (
     <div>
-      <h3>{trackName}</h3>
-      <audio data-testid="audio-component" src={ previewUrl } controls>
+      <h3>{song.trackName}</h3>
+      <audio data-testid="audio-component" src={ song.previewUrl } controls>
         <track kind="captions" />
         O seu navegador não suporta o elemento
         <code>audio</code>
