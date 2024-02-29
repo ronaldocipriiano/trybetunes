@@ -123,23 +123,17 @@
   width: 100%;
 }
 
-/* stylelint-disable value-no-vendor-prefix */
-
-/* stylelint-disable order/properties-alphabetical-order */
 .album-card h3 {
-  display: -webkit-box;
   -webkit-box-orient: vertical;
   color: #003be5;
+  display: -webkit-box;
   font-size: 1.5rem;
+  -webkit-line-clamp: 2;
   margin-top: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
 }
 
-/* stylelint-enable value-no-vendor-prefix */
-
-/* stylelint-enable order/properties-alphabetical-order */
 .album-card p {
   color: black;
   font-size: 1rem;

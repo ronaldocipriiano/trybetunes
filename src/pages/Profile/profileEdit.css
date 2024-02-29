@@ -12,9 +12,11 @@
   margin-bottom: 10px;
 }
 
-/* stylelint-disable-next-line */
-.profile-edit-container input[type="text"],
-.profile-edit-container textarea {
+.input-field {
+  margin-bottom: 20px;
+}
+
+.profile-edit-container input[ type = 'text' ], .profile-edit-container textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
