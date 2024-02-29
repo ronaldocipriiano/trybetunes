@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/userAPI';
 import logo from '../../images/logo.png';
+import './login.css';
 
 function LoginForm() {
   const [name, setName] = useState('');

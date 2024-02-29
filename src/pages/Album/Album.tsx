@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import getMusics from '../../services/musicsAPI';
 import MusicCard from '../../components/MusicCard';
 import { AlbumType, SongType } from '../../types';
+import './album.css';
 
 function Album() {
   const { id } = useParams<{ id: string }>();

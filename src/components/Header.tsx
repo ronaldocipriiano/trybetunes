@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import logo from '../images/logo.png';
+import './header.css';
 
 function Header() {
   const [loading, setLoading] = useState(true);
@@ -26,13 +27,13 @@ function Header() {
       <img src={ logo } alt="Logo da empresa" />
       <nav>
         <NavLink to="search" data-testid="link-to-search">
-          Search
+          Procurar
         </NavLink>
         <NavLink to="/favorites" data-testid="link-to-favorites">
-          Favorites
+          Favoritas
         </NavLink>
         <NavLink to="/profile" data-testid="link-to-profile">
-          Profile
+          Perfil
         </NavLink>
       </nav>
       <p data-testid="header-user-name">{ userName }</p>

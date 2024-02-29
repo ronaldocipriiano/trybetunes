@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserType } from '../../types';
 import { getUser } from '../../services/userAPI';
+import './profile.css';
 
 function Profile() {
   const [loading, setLoading] = useState(true);
@@ -30,8 +31,18 @@ function Profile() {
       <div className="profile-info">
         <img data-testid="profile-image" src={ user.image } alt="" />
         <h1 data-testid="profile-name">{user.name}</h1>
-        <p data-testid="profile-email">{user.email}</p>
-        <p data-testid="profile-description">{user.description}</p>
+        <div className="profile-details">
+          <div className="profile-detail">
+            <p className="detail-label">Email:</p>
+            <p className="detail-value">{user.email || 'N/A'}</p>
+          </div>
+          <div className="profile-detail">
+            <p className="detail-label">Descrição:</p>
+            <p className="detail-value profile-detail-description">
+              {user.description || 'N/A'}
+            </p>
+          </div>
+        </div>
         <Link to="/profile/edit" className="edit-profile-button">
           Editar perfil
         </Link>

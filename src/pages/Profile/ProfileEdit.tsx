@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserType } from '../../types';
 import { getUser, updateUser } from '../../services/userAPI';
+import './profileEdit.css';
 
 function ProfileEdit() {
   const navigate = useNavigate();
@@ -29,16 +30,17 @@ function ProfileEdit() {
     return <p>Carregando...</p>;
   }
 
-  const handleInputChange = ({ target }:
-  React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    { target }: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { id, value } = target;
     setUser({ ...user, [id]: value });
-    setButtonDisabled(!validateFields(user));
+    setButtonDisabled(!validateFields({ ...user, [id]: value }));
   };
 
   const validateFields = (prevUser: UserType) => {
-    const { name, email, image, description } = prevUser;
-    return !!(name && email && image && description);
+    const { name } = prevUser;
+    return !!name.trim();
   };
 
   const handleSubmit = async () => {

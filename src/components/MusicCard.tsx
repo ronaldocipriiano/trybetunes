@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SongType } from '../types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import './musicCard.css';
 
 type MusicCardProps = {
   song: SongType;

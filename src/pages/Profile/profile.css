@@ -1,11 +1,16 @@
 .profile-page {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 100px auto 20px;
+  max-width: 600px;
+  padding: 20px;
 }
 
 .profile-info {
+  border-radius: 10px;
+  font-size: 1.6rem;
+  padding: 20px;
   text-align: center;
 }
 
@@ -18,19 +23,55 @@
 }
 
 .profile-info h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
 }
 
 .profile-info p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.profile-details {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-detail {
+  display: flex;
   margin-bottom: 10px;
+}
+
+.detail-label {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  font-weight: 400;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.profile-detail .detail-label {
+  border: none;
+}
+
+.detail-value {
+  font-style: italic;
+  font-weight: 400;
+  width: 100%;
+}
+
+.profile-detail-description {
+  max-width: 300px;
+  overflow-wrap: break-word;
 }
 
 .edit-profile-button {
   background-color: #003be5;
   border: none;
-  border-radius: 5px;
+  border-radius: 100px;
   color: white;
+  cursor: pointer;
   display: inline-block;
   padding: 10px 20px;
   text-decoration: none;
