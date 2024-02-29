@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SongType } from '../../types';
 import { getFavoriteSongs } from '../../services/favoriteSongsAPI';
-import MusicCard from './MusicCard';
+import MusicCard from '../../components/MusicCard';
 
 function Favorites() {
   const [tracks, setTracks] = useState<SongType[]>([]);
@@ -26,7 +26,7 @@ function Favorites() {
   }
 
   return (
-    <div>
+    <div className="favorites-page">
       <h1>Músicas Favoritas</h1>
       {tracks.map((track) => (
         <MusicCard

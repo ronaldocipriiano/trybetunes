@@ -26,19 +26,16 @@ function Profile() {
   }
 
   return (
-    <div>
-      <img
-        data-testid="profile-image"
-        id="image"
-        src={ user.image }
-        alt=""
-      />
-      <div>
-        <h1 data-testid="profile-name">{ user.name }</h1>
-        <p data-testid="profile-email">{ user.email }</p>
-        <p data-testid="profile-description">{ user.description }</p>
+    <div className="profile-page">
+      <div className="profile-info">
+        <img data-testid="profile-image" src={ user.image } alt="" />
+        <h1 data-testid="profile-name">{user.name}</h1>
+        <p data-testid="profile-email">{user.email}</p>
+        <p data-testid="profile-description">{user.description}</p>
+        <Link to="/profile/edit" className="edit-profile-button">
+          Editar perfil
+        </Link>
       </div>
-      <Link to="/profile/edit">Editar perfil</Link>
     </div>
   );
 }

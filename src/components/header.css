@@ -1,0 +1,35 @@
+header {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 20px 100px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header img {
+  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+nav a {
+  color: #333;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}

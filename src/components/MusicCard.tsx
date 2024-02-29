@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { SongType } from '../../types';
-import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
+import { SongType } from '../types';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 type MusicCardProps = {
   song: SongType;
@@ -36,7 +36,7 @@ function MusicCard({ song, updateFavoriteSongs = () => '' }: MusicCardProps) {
   };
 
   return (
-    <div>
+    <div className="music-card">
       <h3>{song.trackName}</h3>
       <audio data-testid="audio-component" src={ song.previewUrl } controls>
         <track kind="captions" />

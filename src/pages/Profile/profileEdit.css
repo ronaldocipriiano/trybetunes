@@ -1,0 +1,49 @@
+.profile-edit-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 100px auto 20px;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.profile-edit-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* stylelint-disable-next-line */
+.profile-edit-container input[type="text"],
+.profile-edit-container textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 100%;
+}
+
+.profile-edit-container textarea {
+  height: 100px;
+}
+
+.profile-edit-container button {
+  background-color: #003be5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.profile-edit-container button:hover {
+  background-color: #0023a8;
+}
+
+.profile-edit-container button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}

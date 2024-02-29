@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
+import logo from '../images/logo.png';
 
 function Header() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ function Header() {
 
   return (
     <header data-testid="header-component">
+      <img src={ logo } alt="Logo da empresa" />
       <nav>
         <NavLink to="search" data-testid="link-to-search">
           Search

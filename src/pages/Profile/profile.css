@@ -1,0 +1,42 @@
+.profile-page {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info img {
+  border-radius: 50%;
+  height: 150px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  width: 150px;
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  margin-bottom: 10px;
+}
+
+.edit-profile-button {
+  background-color: #003be5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.edit-profile-button:hover {
+  background-color: #001e92;
+}

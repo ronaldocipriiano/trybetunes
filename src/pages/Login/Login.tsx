@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/userAPI';
+import logo from '../../images/logo.png';
 
 function LoginForm() {
   const [name, setName] = useState('');
@@ -29,26 +30,27 @@ function LoginForm() {
   const isButtonDisabled = name.length < 3;
 
   return (
-    <form onSubmit={ handleSubmit }>
-      <label htmlFor="nameInput">
-        Nome:
+    <div className="container-login">
+      <form onSubmit={ handleSubmit }>
+        <img src={ logo } alt="Logo da empresa" />
         <input
           type="text"
           id="nameInput"
           value={ name }
           onChange={ handleNameChange }
           data-testid="login-name-input"
+          placeholder="Qual o seu nome?"
         />
-      </label>
-      <button
-        type="submit"
-        disabled={ isButtonDisabled }
-        data-testid="login-submit-button"
-      >
-        Entrar
-      </button>
-      {loading && <p>Carregando...</p>}
-    </form>
+        <button
+          type="submit"
+          disabled={ isButtonDisabled }
+          data-testid="login-submit-button"
+        >
+          Entrar
+        </button>
+        {loading && <p>Carregando...</p>}
+      </form>
+    </div>
   );
 }
 

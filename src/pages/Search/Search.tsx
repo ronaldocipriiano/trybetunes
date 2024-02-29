@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import { AlbumType } from '../../types';
 
@@ -8,6 +10,7 @@ function Search() {
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState<AlbumType[]>([]);
   const [searchResult, setSearchResult] = useState('');
+  // const [searchPerformed, setSearchPerformed] = useState(false);
   const navigate = useNavigate();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,6 +25,7 @@ function Search() {
         setAlbums(response);
         setArtistName('');
         setSearchResult(`Resultado de álbuns de: ${artistName}`);
+        // setSearchPerformed(true);
       })
       .finally(() => {
         setLoading(false);
