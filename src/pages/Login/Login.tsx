@@ -16,7 +16,7 @@ function LoginForm() {
     createUser({ name })
       .then(() => {
         setLoading(false);
-        navigate('/search');
+        navigate('/trybetunes/search');
       })
       .catch((error) => {
         setLoading(false);
