@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { SongType } from '../types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import checked_heart from '../images/checked_heart.png';
+import empty_heart from '../images/empty_heart.png';
 import './musicCard.css';
 
 type MusicCardProps = {
@@ -56,9 +58,9 @@ function MusicCard({ song, updateFavoriteSongs = () => '' }: MusicCardProps) {
           onChange={ handleFavoriteToggle }
         />
         { isFavorite ? (
-          <img src="/src/images/checked_heart.png" alt="favorite" />
+          <img src={ checked_heart } alt="favorite" />
         ) : (
-          <img src="/src/images/empty_heart.png" alt="favorite" />
+          <img src={ empty_heart } alt="favorite" />
         )}
       </label>
     </div>

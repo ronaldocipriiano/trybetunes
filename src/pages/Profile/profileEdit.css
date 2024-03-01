@@ -28,7 +28,7 @@
   margin-bottom: 20px;
 }
 
-.profile-edit-container input[ type = 'text' ], .profile-edit-container textarea {
+.profile-edit-container input[type='text'], .profile-edit-container textarea {
   border: 1px solid #ccc;
   border-radius: 20px;
   box-sizing: border-box;

@@ -43,7 +43,7 @@ function Profile() {
             </p>
           </div>
         </div>
-        <Link to="/profile/edit" className="edit-profile-button">
+        <Link to="/trybetunes/profile/edit" className="edit-profile-button">
           Editar perfil
         </Link>
       </div>

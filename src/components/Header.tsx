@@ -26,13 +26,13 @@ function Header() {
     <header data-testid="header-component">
       <img src={ logo } alt="Logo da empresa" />
       <nav>
-        <NavLink to="search" data-testid="link-to-search">
+        <NavLink to="/trybetunes/search" data-testid="link-to-search">
           Procurar
         </NavLink>
-        <NavLink to="/favorites" data-testid="link-to-favorites">
+        <NavLink to="/trybetunes/favorites" data-testid="link-to-favorites">
           Favoritas
         </NavLink>
-        <NavLink to="/profile" data-testid="link-to-profile">
+        <NavLink to="/trybetunes/profile" data-testid="link-to-profile">
           Perfil
         </NavLink>
       </nav>

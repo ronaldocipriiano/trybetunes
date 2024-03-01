@@ -11,13 +11,13 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={ <LoginForm /> } />
+        <Route path="/trybetunes" element={ <LoginForm /> } />
         <Route element={ <Layout /> }>
-          <Route path="/search" element={ <Search /> } />
-          <Route path="/Album/:id" element={ <Album /> } />
-          <Route path="/profile" element={ <Profile /> } />
-          <Route path="/profile/edit" element={ <ProfileEdit /> } />
-          <Route path="/favorites" element={ <Favorites /> } />
+          <Route path="/trybetunes/search" element={ <Search /> } />
+          <Route path="/trybetunes/Album/:id" element={ <Album /> } />
+          <Route path="/trybetunes/profile" element={ <Profile /> } />
+          <Route path="/trybetunes/profile/edit" element={ <ProfileEdit /> } />
+          <Route path="/trybetunes/favorites" element={ <Favorites /> } />
         </Route>
       </Routes>
     </div>

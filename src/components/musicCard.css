@@ -31,7 +31,7 @@
 }
 
 /* stylelint-disable-next-line */
-.music-card input[ type = 'checkbox' ] {
+.music-card input[type='checkbox'] {
   display: none;
 }
 
